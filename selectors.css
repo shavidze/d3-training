@@ -1,0 +1,16 @@
+.changeColor{
+    stroke:indigo;
+    fill:deeppink;
+    stroke-width: 4;
+}
+svg{
+    fill:grey;
+    
+}
+.boxes{
+    width:100px;
+    height: 100px;
+    border:1px solid rgb(250, 247, 247);
+    fill:orange;
+    background:pink;
+}
