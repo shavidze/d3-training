@@ -94,5 +94,21 @@
         <circle cx="150" cy="200" r="5"/>
         <circle cx="50" cy="200" r="5"/>
     </svg>  -->
+
+    <!-- Transformations applied to the <g> element are performed on all of its child elements, and any of its attributes are inherited by its child elements. It can also group multiple elements to be referenced later with the <use> element. -->
+    <svg width="600" height="600">
+
+        <g transform="translate(100,0) transition:all 5s">
+            <rect x="10" y="10" width="100" height="50">
+
+            </rect>
+            <circle cx="50" cy="150" r="30">
+
+            </circle>
+
+            <polygon points="50,250 100,250 75,275"/>
+        </g>
+
+    </svg>
 </body>
 </html>

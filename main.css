@@ -19,3 +19,7 @@ svg text{
 svg path{
     stroke: red;
 }
+svg g{
+    stroke:blue;
+    fill:green;
+}
