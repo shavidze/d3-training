@@ -12,17 +12,55 @@
 <body>
     
     <div>
-        <p>Ager</p>
-        <p>Ager</p>
-        <p>Ager</p>
+        
     </div>
     <script>
+
+        //სტილების შეცვლა
         d3.selectAll("p").style("color", "blue");
-        
         d3.select("body").style("background-color", "black");
-        d3.selectAll("p").style("color",function(data,index){
-            return data%2==1? "#fff":"eee";
-        })
+
+
+        //გადარბენა ყველა ელემენტზე - data,index
+        
+        // d3.selectAll("p").style("color", function(d, i) {
+        //         console.log(i);
+        //         return (i % 2 === 1? "" : "red");
+        // });
+        //
+        
+        //როცა დატაში უფრო მეტი ელემენტია ვიდრე დასელექტებული ელემენტების რაოდენობა
+        // d3.select("body")
+        //     .selectAll("p")
+        //     .data([4, 8, 15, 16, 23, 42])
+        //     .enter().append("p")
+        //     .text(function(d) { return "I’m number " + d + "!"; });
+
+        // ზოგადი პატერნი როცა დინამიურად იცვლება ელემენტები დატაში
+        // Update…
+            var p = d3.select("body")
+            .selectAll("p")
+            .data([4, 8, 15, 16, 23, 42])
+                .text(function(d) { return d; });
+
+            // Enter…
+            p.enter().append("p")
+                .text(function(d) { return d; });
+
+            // Exit…
+            p.exit().remove();
+
+
+            //transition
+            d3.select("body").transition().duration(0)
+                .style("background-color", "white");
+
+            d3.selectAll("p").data([4, 8, 15, 16, 23, 42]).transition().duration(750).delay(function(d,i){
+                return (i+1)*500;
+            }).text(function(d){
+                return "I am a " + d;
+            });
+            
     </script>
 </body>
 </html>
