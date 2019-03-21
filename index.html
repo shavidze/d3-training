@@ -38,29 +38,45 @@
 
         // ზოგადი პატერნი როცა დინამიურად იცვლება ელემენტები დატაში
         // Update…
-            var p = d3.select("body")
-            .selectAll("p")
-            .data([4, 8, 15, 16, 23, 42])
-                .text(function(d) { return d; });
+            // var p = d3.select("body")
+            // .selectAll("p")
+            // .data([4, 8, 15, 16, 23, 42])
+            //     .text(function(d) { return d; });
 
-            // Enter…
-            p.enter().append("p")
-                .text(function(d) { return d; });
+            // // Enter…
+            // p.enter().append("p")
+            //     .text(function(d) { return d; });
 
-            // Exit…
-            p.exit().remove();
+            // // Exit…
+            // p.exit().remove();
 
 
             //transition
-            d3.select("body").transition().duration(0)
-                .style("background-color", "white");
+            // d3.select("body").transition().duration(0)
+            //     .style("background-color", "white");
 
-            d3.selectAll("p").data([4, 8, 15, 16, 23, 42]).transition().duration(750).delay(function(d,i){
-                return (i+1)*500;
-            }).text(function(d){
-                return "I am a " + d;
-            });
+            // d3.selectAll("p").data([4, 8, 15, 16, 23, 42]).transition().duration(750).delay(function(d,i){
+            //     return (i+1)*500;
+            // }).text(function(d){
+            //     return "I am a " + d;
+            // });
             
     </script>
+    
+    <!-- svg-ები -->
+    <!-- <svg width="600" height="600">
+        <line x1="0" y1="0" x2="100" y2="100" />
+        <line x1="0" y1="0" x2="100" y2="0" />
+        <line x1="0" y1="0" x2="0" y2="100" />
+    </svg> -->
+
+    
+    <svg width="600" height="600">
+            <line x1="0" y1="0" x2="100" y2="100" />
+            <rect x="120" y="120" width="100"height="50"/>
+            <circle cx="350" cy="150" r="50"/>
+            <ellipse cx="350" cy="350" rx="100" ry="50"/>
+            <text x="100" y="20">SVG Basics</text>
+    </svg>
 </body>
 </html>

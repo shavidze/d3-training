@@ -1,0 +1,18 @@
+body svg{
+    background-color: pink;
+}
+svg line{
+    stroke: red;/*lines feri*/
+    stroke-width: 15;/*sisqe */
+}
+
+svg rect,circle{
+    stroke:green;
+    stroke-opacity: .7;
+    stroke-width: 5;
+    fill:gray;
+    fill-opacity: .6;
+}
+svg text{
+    fill:green;
+}
