@@ -16,3 +16,6 @@ svg rect,circle{
 svg text{
     fill:green;
 }
+svg path{
+    stroke: red;
+}
