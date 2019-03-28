@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="d3-reference/d3.min.js" charset="utf-8"></script>
+    <style>
+        div {
+            height: 25px;
+            margin: 10px;
+            background: pink;
+            color: red;
+            text-align: center;
+            line-height: 25px;
+
+        }
+    </style>
+    <title>Horizontal bar chart</title>
+</head>
+
+<body>
+    <script>
+        var numbers = [31, 25, 35, 18, 9, 14];
+        var bars = d3.select("body").selectAll("div").data(numbers);
+
+        bars.enter().append("div").style("width", function (d) {
+            return d * 10 + "px";
+        }).text(function (d) {
+            return d;
+        })
+    </script>
+</body>
+
+</html>
