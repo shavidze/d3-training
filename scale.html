@@ -11,10 +11,12 @@
 
 <body>
     <script>
-        var numbers = [3100, 250, 35, 1800, 90, 140];
+        var numbers = [12, 43, 35, 15, 90, 78];
         var width = 600;
         var height = 500;
-        var myScale = d3.scaleLinear().domain([d3.min(numbers, function (d) { return (d - 150); }), d3.max(numbers, function (d) { return (d + 150); })]).range([0, height]);
+        var myScaleColors = d3.scaleLinear().domain([d3.min(numbers, function (d) { return (d - 150); }), d3.max(numbers, function (d) { return (d + 150); })]).range(["indigo", "deeppink"]);
+        var myScale = d3.scaleLinear().domain([d3.min(numbers, function (d) { return (d - 40); }), d3.max(numbers, function (d) { return (d + 50); })]).range([0, height]);
+
         var svg = d3.select("body").append("svg").attr("width", width).attr("height", height).style("background", "pink");
         var rectangles = svg.selectAll("rect").data(numbers).enter().append("rect").attr("width", 25).attr("height", function (d, i) {
             return d * 10;
@@ -22,7 +24,9 @@
             return 5 + (28 * i);
         }).attr("y", function (d, i) {
             return height - myScale(d);
-        }).style("fill", "indigo")
+        }).style("fill", function (d) {
+            return myScaleColors(d);
+        })
 
         var data = svg.selectAll("text").data(numbers).enter().append("text").text(function (d) {
             return d;
